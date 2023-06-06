@@ -60,12 +60,12 @@ const main = async (cb) => {
         console.log(txn);
         let value = ((EXPIRES - TODAY)/60/60/24 + 1) * PRICE;
         let user = (await web3.eth.getAccounts())[0];
-        txn = await marketplace.rentNFT(NFT_CONTRACT, TOKEN_ID, EXPIRES, {from: user, value: value});
-        console.log(txn);
-        value = (Math.floor((EXPIRES - Date.now()/1000)/60/60/24 + 1)) * PRICE;
-        let options = value < 0 ? {from: owner} : {from: owner, value: value};
-        txn = await marketplace.unlistNFT(NFT_CONTRACT, TOKEN_ID, options);
-        console.log(txn);
+        // txn = await marketplace.rentNFT(NFT_CONTRACT, TOKEN_ID, EXPIRES, {from: user, value: value});
+        // console.log(txn);
+        // value = (Math.floor((EXPIRES - Date.now()/1000)/60/60/24 + 1)) * PRICE;
+        // let options = value < 0 ? {from: owner} : {from: owner, value: value};
+        // txn = await marketplace.unlistNFT(NFT_CONTRACT, TOKEN_ID, options);
+        // console.log(txn);
     } catch(err) {
         console.log(err);
     }
